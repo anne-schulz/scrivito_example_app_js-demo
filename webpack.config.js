@@ -209,6 +209,11 @@ function devServerCspHeader() {
   // allow ws: for webpack hot code reloading
   directives["default-src"].push("ws:");
 
+  // Add custom rules for onDevSdk
+  directives["default-src"].push("http:");
+  directives["script-src"].push("http:");
+  directives["style-src"].push("http:");
+
   return builder({ directives });
 }
 
