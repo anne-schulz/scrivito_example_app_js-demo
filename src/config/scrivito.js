@@ -1,7 +1,9 @@
 import * as Scrivito from "scrivito";
+import { wantsVisitorAuthentication } from './auth';
 
 const config = {
   tenant: process.env.SCRIVITO_TENANT,
+  visitorAuthentication: wantsVisitorAuthentication,
   unstable: { assetUrlBase: "http://localhost:8090/scrivito" },
 };
 

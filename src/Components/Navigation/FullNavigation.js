@@ -4,6 +4,7 @@ import CollapseToggle from "./CollapseToggle";
 import Logo from "./Logo";
 import Nav from "./Nav";
 import { SearchBox, SearchIcon } from "./Search";
+import { LoginBox } from "./LoginBox";
 
 class FullNavigation extends React.Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class FullNavigation extends React.Component {
       <nav className={classNames.join(" ")}>
         <div className="container">
           <SearchBox toggleSearch={toggleSearch} showSearch={showSearch} />
+          <LoginBox />
 
           <div className="navbar-header">
             <CollapseToggle
