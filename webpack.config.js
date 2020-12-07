@@ -158,6 +158,7 @@ function generatePlugins({ isProduction, isPrerendering, scrivitoOrigin }) {
       SCRIVITO_ORIGIN: scrivitoOrigin,
       AUTH_CLIENT_ID: "",
       AUTH_DOMAIN: "",
+      AUTH_USER_POOL_ID: "",
     }),
     new Webpackbar(),
     new CopyWebpackPlugin({
