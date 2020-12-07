@@ -23,15 +23,18 @@ export class CognitoAuthWrapper {
         console.log(accessToken); // eslint-disable-line
         console.log(expiresAt); // eslint-disable-line
         this.setSession({ accessToken, idToken, expiresAt });
+        this.refreshSessionBeforeExpiration();
+        this.tokenSuccessCallbacks.forEach((callback) => callback());
       },
       onFailure: (_err) => {
         alert("Error!"); // eslint-disable-line
+        this.clearSessionRenewal();
+        this.tokenFailureCallbacks.forEach((callback) => callback());
       },
     };
 
-    this.tokenSuccessCallbacks = [() => this.refreshSessionBeforeExpiration()];
+    this.tokenSuccessCallbacks = [];
     this.tokenFailureCallbacks = [];
-    this.logoutCallbacks = [() => this.clearSessionRenewal()];
 
     this.accessToken = null;
     this.idToken = null;
@@ -48,31 +51,37 @@ export class CognitoAuthWrapper {
     return addEntry(this.tokenFailureCallbacks, callback);
   }
 
-  onLogout(callback) {
-    return addEntry(this.logoutCallbacks, callback);
-  }
-
   // state
 
   getIdToken() {
     return this.idToken;
   }
 
-  isLoggedIn() { // eslint-disable-line
-    return localStorage.getItem("isLoggedIn") === "true";
+  // called if the user is expected to already be logged in, initially
+  getSession() {
+    this.webAuth.getSession();
   }
 
-  // life cycle
-
+  // called if the user is expected to already be logged in, initially
   login() {
     this.webAuth.getSession();
   }
 
-  handleAuthentication() {
+  handleReturnUrl() {
+    const isReturnUrl = isIdTokenReturnUrl(window.location);
+    console.log("HAS #id_token", isReturnUrl); // eslint-disable-line
+
     this.webAuth.parseCognitoWebResponse(window.location.href);
+
+    if (isReturnUrl && isIdTokenReturnUrl(window.location)) {
+      window.history.pushState("", document.title, window.location.pathname);
+    }
+
+    return isReturnUrl;
   }
 
   renewSession() {
+    // TODO: Must not return a cached session if called from expiry prevention
     this.webAuth.getSession();
   }
 
@@ -81,17 +90,13 @@ export class CognitoAuthWrapper {
     this.idToken = null;
     this.expiresAt = 0;
 
-    localStorage.removeItem("isLoggedIn");
-
     this.webAuth.signOut();
-    this.logoutCallbacks.forEach((callback) => callback());
+    this.clearSessionRenewal();
   }
 
   // private parts
 
   setSession({ accessToken, idToken, expiresAt }) {
-    localStorage.setItem("isLoggedIn", "true");
-
     this.accessToken = accessToken;
     this.idToken = idToken;
     this.expiresAt = expiresAt;
@@ -126,6 +131,11 @@ export class CognitoAuthWrapper {
       this.expirationTimeout = undefined;
     }
   }
+}
+
+function isIdTokenReturnUrl(windowLocation) {
+  const { hash } = windowLocation;
+  return hash && hash.substr(0, 9) === "#id_token";
 }
 
 function addEntry(list, entry) {

@@ -1,11 +1,6 @@
 import * as React from "react";
 
-import {
-  loginVisitor,
-  logoutVisitor,
-  notifyOnLogin,
-  notifyOnTokenFailure,
-} from "../Auth/VisitorIdentityProvider";
+import { login, logout, onLoginStateChange } from "../Auth/LoginState";
 
 export class Login extends React.Component {
   constructor(props) {
@@ -14,31 +9,44 @@ export class Login extends React.Component {
   }
 
   componentDidMount() {
-    notifyOnLogin(() => this.setState({ isLoggedIn: true }));
-    notifyOnTokenFailure(() => this.setState({ isLoggedIn: false }));
+    this.cleanupStateChangeNotifications = onLoginStateChange((isLoggedIn) => {
+      this.setState({ isLoggedIn });
+    });
+  }
+
+  componentWillUnmount() {
+    this.cleanupStateChangeNotifications();
   }
 
   render() {
+    if (this.state.isLoggedIn === "disabled") {
+      return (
+        <button className="text-white strong" disabled>
+          Sign in
+        </button>
+      );
+    }
+
     return this.state.isLoggedIn ? (
-      <button className="text-danger strong" onClick={logout}>
+      <button className="text-danger strong" onClick={onLogout}>
         Log out
       </button>
     ) : (
-      <button className="text-white strong" onClick={signin}>
+      <button className="text-white strong" onClick={onLogin}>
         Sign in
       </button>
     );
   }
 }
 
-function signin(e) {
+function onLogin(e) {
   e.stopPropagation();
   e.preventDefault();
-  loginVisitor();
+  login();
 }
 
-function logout(e) {
+function onLogout(e) {
   e.stopPropagation();
   e.preventDefault();
-  logoutVisitor();
+  logout();
 }
