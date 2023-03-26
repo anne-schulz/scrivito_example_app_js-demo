@@ -5,7 +5,7 @@ import { getMetadata } from "../utils/getMetadata";
 import favicon from "../assets/images/favicon.png";
 
 export const CurrentPageMetadata = Scrivito.connect(() => {
-  let lang = "en";
+  const lang = "de";
   let title = "";
   let meta = [];
   const links = [
@@ -18,7 +18,7 @@ export const CurrentPageMetadata = Scrivito.connect(() => {
 
   const page = Scrivito.currentPage();
   if (page) {
-    lang = page.language() || "en";
+    // lang = page.language() || "en";
     title = page.get("title") || "";
     meta = getMetadata(page);
     links.push({ rel: "canonical", href: Scrivito.urlFor(page) });
