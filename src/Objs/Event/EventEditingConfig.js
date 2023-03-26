@@ -69,7 +69,6 @@ Scrivito.provideEditingConfig("Event", {
   propertiesGroups: [...metadataPropertiesGroups],
   initialContent: {
     ...metadataInitialContent,
-    title: "Lorem Ipsum",
     body: [new SectionWidget({})],
   },
   validations: [
