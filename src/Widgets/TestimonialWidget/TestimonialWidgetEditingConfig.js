@@ -5,6 +5,7 @@ import testimonialWidgetIcon from "../../assets/images/testimonial_widget.svg";
 Scrivito.provideEditingConfig("TestimonialWidget", {
   title: "Testimonial",
   thumbnail: testimonialWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     testimonial: {
       title: "Testimonial",

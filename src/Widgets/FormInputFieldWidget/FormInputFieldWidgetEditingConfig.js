@@ -8,6 +8,7 @@ import { typeValidation } from "../FormContainerWidget/utils/validations/typeVal
 Scrivito.provideEditingConfig("FormInputFieldWidget", {
   title: "Form Input Field",
   thumbnail: formInputFieldWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     required: { title: "Mandatory" },
     type: {

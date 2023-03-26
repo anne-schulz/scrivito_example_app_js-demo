@@ -11,6 +11,7 @@ Scrivito.provideEditingConfig("Author", {
   title: "Author",
   thumbnail: authorObjIcon,
   thumbnailForContent: (obj) => obj.get("image"),
+  hideInSelectionDialogs: true,
   attributes: {
     ...metadataEditingConfigAttributes,
     title: {

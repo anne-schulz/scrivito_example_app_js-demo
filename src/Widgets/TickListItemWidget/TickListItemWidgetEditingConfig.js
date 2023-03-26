@@ -4,6 +4,7 @@ import tickListItemWidgetIcon from "../../assets/images/tick_list_item_widget.sv
 Scrivito.provideEditingConfig("TickListItemWidget", {
   title: "Tick List Item",
   thumbnail: tickListItemWidgetIcon,
+  hideInSelectionDialogs: true,
   initialContent: {
     statement: "Lorem ipsum",
   },

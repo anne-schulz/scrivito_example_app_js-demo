@@ -5,6 +5,7 @@ import { TestimonialWidget } from "../TestimonialWidget/TestimonialWidgetClass";
 Scrivito.provideEditingConfig("TestimonialSliderWidget", {
   title: "Testimonial Slider",
   thumbnail: testimonialSliderWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     testimonials: {
       title: "Testimonials",

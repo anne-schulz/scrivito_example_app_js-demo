@@ -4,6 +4,7 @@ import carouselWidgetIcon from "../../assets/images/carousel_widget.svg";
 Scrivito.provideEditingConfig("CarouselWidget", {
   title: "Carousel",
   thumbnail: carouselWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     images: {
       title: "Images",

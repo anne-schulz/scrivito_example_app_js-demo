@@ -8,6 +8,7 @@ import { typeValidation } from "../FormContainerWidget/utils/validations/typeVal
 Scrivito.provideEditingConfig("FormCheckboxWidget", {
   title: "Form Checkbox",
   thumbnail: formCheckboxWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     required: { title: "Mandatory" },
     type: {

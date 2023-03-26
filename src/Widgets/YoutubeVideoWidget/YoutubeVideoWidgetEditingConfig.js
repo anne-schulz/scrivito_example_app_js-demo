@@ -4,6 +4,7 @@ import youtubeVideoWidgetIcon from "../../assets/images/youtube_video_widget.svg
 Scrivito.provideEditingConfig("YoutubeVideoWidget", {
   title: "YouTube Video",
   thumbnail: youtubeVideoWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     youtubeVideoId: {
       title: "YouTube video ID",

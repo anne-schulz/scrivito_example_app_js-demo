@@ -6,6 +6,7 @@ import { customFieldNameValidation } from "../FormContainerWidget/utils/validati
 Scrivito.provideEditingConfig("FormHiddenFieldWidget", {
   title: "Hidden Field",
   thumbnail: formHiddenFieldWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     customFieldName: { title: "Field name" },
     hiddenValue: {

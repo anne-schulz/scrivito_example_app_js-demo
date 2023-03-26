@@ -12,6 +12,7 @@ Scrivito.provideEditingConfig("Job", {
   title: "Job",
   thumbnail: jobObjIcon,
   thumbnailForContent: (obj) => obj.get("image"),
+  hideInSelectionDialogs: true,
   attributes: {
     ...metadataEditingConfigAttributes,
     title: {

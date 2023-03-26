@@ -5,6 +5,7 @@ import { IconEditorTab } from "../../Components/ScrivitoExtensions/IconEditorTab
 Scrivito.provideEditingConfig("FeaturePanelWidget", {
   title: "Feature Panel",
   thumbnail: featurePanelWidgetIcon,
+  hideInSelectionDialogs: true,
   propertiesGroups: [
     {
       title: "Icon",

@@ -4,6 +4,7 @@ import googleMapsWidgetIcon from "../../assets/images/google_maps_widget.svg";
 Scrivito.provideEditingConfig("GoogleMapsWidget", {
   title: "Google Maps",
   thumbnail: googleMapsWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     address: {
       title: "Address",

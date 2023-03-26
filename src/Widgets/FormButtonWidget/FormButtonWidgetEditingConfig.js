@@ -5,6 +5,7 @@ import { insideFormContainerValidation } from "../FormContainerWidget/utils/vali
 Scrivito.provideEditingConfig("FormButtonWidget", {
   title: "Form Button",
   thumbnail: formButtonWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     buttonText: {
       title: "Button Text",

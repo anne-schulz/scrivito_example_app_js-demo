@@ -12,6 +12,7 @@ import { getFormContainer } from "./utils/getFormContainer";
 Scrivito.provideEditingConfig("FormContainerWidget", {
   title: "Form",
   thumbnail: formContainerWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     formId: {
       title: "Form ID",

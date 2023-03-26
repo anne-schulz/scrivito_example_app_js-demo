@@ -4,6 +4,7 @@ import vimeoVideoWidgetIcon from "../../assets/images/vimeo_video_widget.svg";
 Scrivito.provideEditingConfig("VimeoVideoWidget", {
   title: "Vimeo Video",
   thumbnail: vimeoVideoWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     vimeoVideoId: {
       title: "Vimeo video ID",

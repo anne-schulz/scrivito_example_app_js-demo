@@ -5,6 +5,7 @@ import iconWidgetIcon from "../../assets/images/icon_widget.svg";
 Scrivito.provideEditingConfig("IconWidget", {
   title: "Icon",
   thumbnail: iconWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     size: {
       title: "Size",

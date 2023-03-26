@@ -5,6 +5,7 @@ import { TickListItemWidget } from "../TickListItemWidget/TickListItemWidgetClas
 Scrivito.provideEditingConfig("TickListWidget", {
   title: "Tick List",
   thumbnail: tickListWidgetIcon,
+  hideInSelectionDialogs: true,
   initialContent: {
     items: [
       new TickListItemWidget({}),

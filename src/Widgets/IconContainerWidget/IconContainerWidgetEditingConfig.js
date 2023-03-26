@@ -5,6 +5,7 @@ import { IconWidget } from "../IconWidget/IconWidgetClass";
 Scrivito.provideEditingConfig("IconContainerWidget", {
   title: "Icon List",
   thumbnail: iconContainerWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     iconList: {
       title: "Icon list",

@@ -16,6 +16,7 @@ import {
 Scrivito.provideEditingConfig("Homepage", {
   title: "Homepage",
   thumbnail: homepageObjIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     ...defaultPageEditingConfigAttributes,
     ...metadataEditingConfigAttributes,

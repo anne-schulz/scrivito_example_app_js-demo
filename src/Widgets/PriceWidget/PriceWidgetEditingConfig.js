@@ -4,6 +4,7 @@ import priceWidgetIcon from "../../assets/images/price_widget.svg";
 Scrivito.provideEditingConfig("PriceWidget", {
   title: "Price",
   thumbnail: priceWidgetIcon,
+  hideInSelectionDialogs: true,
   initialContent: {
     currency: "$",
     price: "20",

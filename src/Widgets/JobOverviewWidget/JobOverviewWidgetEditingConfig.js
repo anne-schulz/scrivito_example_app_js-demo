@@ -4,6 +4,7 @@ import jobOverviewWidgetIcon from "../../assets/images/job_overview_widget.svg";
 Scrivito.provideEditingConfig("JobOverviewWidget", {
   title: "Job Overview",
   thumbnail: jobOverviewWidgetIcon,
+  hideInSelectionDialogs: true,
   attributes: {
     locationLocality: {
       title: "Filter by locality",
