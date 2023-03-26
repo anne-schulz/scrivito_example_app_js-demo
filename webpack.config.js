@@ -165,7 +165,7 @@ function webpackConfig(env = {}) {
       fallback: { crypto: false },
     },
     devServer: {
-      port: 8080,
+      port: process.env.DEV_SERVER_PORT || 8080,
       open: true,
       historyApiFallback: { index: "/catch_all_index.html" },
       headers: {
