@@ -45,31 +45,31 @@ Scrivito.provideEditingConfig("Homepage", {
       description:
         "Needs to be approved at https://cards-dev.twitter.com/validator",
     },
-    googleMapsApiKey: {
-      title: "Google Maps API key",
-      description:
-        "Needs to be requested at https://developers.google.com/maps/web/",
-    },
-    googleAnalyticsTrackingId: {
-      title: "Google Analytics tracking ID",
-      description:
-        "Needs to be requested under your GA property settings." +
-        " See https://analytics.google.com for details.",
-    },
-    intercomAppId: {
-      title: "Intercom app ID",
-      description: "Register at https://www.intercom.com/",
-    },
+    // googleMapsApiKey: {
+    //   title: "Google Maps API key",
+    //   description:
+    //     "Needs to be requested at https://developers.google.com/maps/web/",
+    // },
+    // googleAnalyticsTrackingId: {
+    //   title: "Google Analytics tracking ID",
+    //   description:
+    //     "Needs to be requested under your GA property settings." +
+    //     " See https://analytics.google.com for details.",
+    // },
+    // intercomAppId: {
+    //   title: "Intercom app ID",
+    //   description: "Register at https://www.intercom.com/",
+    // },
     showAsLandingPage: {
       title: "Display this page as a landing page?",
       description:
         "Removes the header navigation and only centers the logo instead. Default: No",
     },
-    cookieConsentLink: {
-      title: "Privacy policy for cookie consent",
-      description:
-        'If you set this link, a cookie consent box will be shown on every page. To preview the effect of this setting, please enable third-party cookies in your browser. The link title defaults to "Learn more »".',
-    },
+    // cookieConsentLink: {
+    //   title: "Privacy policy for cookie consent",
+    //   description:
+    //     'If you set this link, a cookie consent box will be shown on every page. To preview the effect of this setting, please enable third-party cookies in your browser. The link title defaults to "Learn more »".',
+    // },
   },
   properties: (obj) => [...defaultPageProperties(obj), "showAsLandingPage"],
   propertiesGroups: [
@@ -80,12 +80,12 @@ Scrivito.provideEditingConfig("Homepage", {
         "logoDark",
         "logoWhite",
         "dividerLogo",
-        "cookieConsentLink",
+        // "cookieConsentLink",
         "facebookAppId",
         "twitterSite",
-        "googleMapsApiKey",
-        "googleAnalyticsTrackingId",
-        "intercomAppId",
+        // "googleMapsApiKey",
+        // "googleAnalyticsTrackingId",
+        // "intercomAppId",
       ],
       key: "site-settings-group",
     },
@@ -98,14 +98,14 @@ Scrivito.provideEditingConfig("Homepage", {
   validations: [
     ...defaultPageValidations,
     ...metadataValidations,
-    [
-      "googleAnalyticsTrackingId",
+    // [
+    //   "googleAnalyticsTrackingId",
 
-      (trackingId) => {
-        if (trackingId && !trackingId.startsWith("UA-")) {
-          return 'Provide a Universal Analytics property (starts with "UA-"). See https://support.google.com/analytics/answer/10269537 for details.';
-        }
-      },
-    ],
+    //   (trackingId) => {
+    //     if (trackingId && !trackingId.startsWith("UA-")) {
+    //       return 'Provide a Universal Analytics property (starts with "UA-"). See https://support.google.com/analytics/answer/10269537 for details.';
+    //     }
+    //   },
+    // ],
   ],
 });

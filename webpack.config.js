@@ -49,7 +49,6 @@ function webpackConfig(env = {}) {
     context: path.join(__dirname, "src"),
     entry: {
       index: "./index.js",
-      tracking: "./tracking.js",
       scrivito_extensions: "./scrivito_extensions.js",
     },
     target: "web",
@@ -105,10 +104,7 @@ function webpackConfig(env = {}) {
     },
     output: {
       publicPath: "/",
-      filename: (chunkData) =>
-        chunkData.chunk.name === "tracking"
-          ? "[name].js"
-          : "assets/[name].[contenthash].js",
+      filename: "assets/[name].[contenthash].js",
       chunkFilename: "assets/chunk-[id].[contenthash].js",
       assetModuleFilename: "assets/[name].[contenthash][ext]",
       path: path.join(__dirname, BUILD_DIR),
