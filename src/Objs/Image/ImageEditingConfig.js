@@ -10,6 +10,10 @@ Scrivito.provideEditingConfig("Image", {
       title: "Alternative text",
       description: "Brief description of what the image is about.",
     },
+    author: {
+      title: "Author",
+      description: "Who contributed this image.",
+    },
   },
-  properties: ["alternativeText", "tags"],
+  properties: ["alternativeText", "author", "tags"],
 });

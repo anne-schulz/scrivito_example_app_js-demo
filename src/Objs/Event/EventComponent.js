@@ -1,11 +1,13 @@
 import * as React from "react";
 import * as Scrivito from "scrivito";
 import { formatDate } from "../../utils/formatDate";
+import { ImageCredit } from "../../Components/ImageCredit";
 import { InPlaceEditingPlaceholder } from "../../Components/InPlaceEditingPlaceholder";
 import { SchemaDotOrg } from "../../Components/SchemaDotOrg";
 
 Scrivito.provideComponent("Event", ({ page }) => (
   <div>
+    <ImageCredit image={page.get('image')} />
     <section className="title-bgc">
       <div className="container">
         <div className="row align-items-center">

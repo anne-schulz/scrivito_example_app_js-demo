@@ -15,7 +15,7 @@ class EventOverviewWidgetComponent extends React.Component {
 
   render() {
     let eventsSearch = Scrivito.Obj.where("_objClass", "equals", "Event").order(
-      "date",
+      "title",
       "asc"
     );
     const filterTags = this.props.widget.get("tags");

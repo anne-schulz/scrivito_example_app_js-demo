@@ -486,6 +486,15 @@ $easing: cubic-bezier(0.7, 0, 0, 0.7);
 /* titles of modules
 =================================================================== */
 
+.author-bgc {
+  padding-left: 1rem;
+  background-color: $primary;
+  color: #000;
+  a {
+    color: #11f;
+  }
+}
+
 .title-bgc {
   background-color: $primary;
   padding: 3rem;
