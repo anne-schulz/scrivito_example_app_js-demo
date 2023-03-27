@@ -144,11 +144,29 @@ function webpackConfig(env = {}) {
         template: "catch_all_index.html",
         chunks: ["index"],
         inject: false, // needs custom order of script tags
+        minify: env.production && {
+          collapseWhitespace: true,
+          keepClosingSlash: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: false, // don't touch
+        },
       }),
       new HtmlWebpackPlugin({
         filename: "_scrivito_extensions.html",
         template: "_scrivito_extensions.html",
         chunks: ["scrivito_extensions"],
+        minify: env.production && {
+          collapseWhitespace: true,
+          keepClosingSlash: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: false, // don't touch
+        },
       }),
       new ReactRefreshWebpackPlugin({ overlay: false }),
       new webpack.SourceMapDevToolPlugin({}),
