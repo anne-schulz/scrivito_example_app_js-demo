@@ -46,13 +46,13 @@ Scrivito.provideEditingConfig("AddressWidget", {
       ],
     },
     phone: {
-      title: "Phone",
+      title: "Telefon",
     },
     fax: {
       title: "Fax",
     },
     email: {
-      title: "Email",
+      title: "E-Mail",
     },
   },
   properties: [

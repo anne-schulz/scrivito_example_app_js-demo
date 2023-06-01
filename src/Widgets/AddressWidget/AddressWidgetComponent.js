@@ -93,9 +93,9 @@ function Table(props) {
 }
 
 const LOCALIZATION = {
-  phone: "Phone",
+  phone: "Telefon",
   fax: "Fax",
-  email: "Email",
+  email: "E-Mail",
 };
 
 const LINK_PREFIXES = {
