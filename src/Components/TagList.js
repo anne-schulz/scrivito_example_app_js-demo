@@ -19,7 +19,7 @@ export function TagList({ showTags, tags, currentTag, setTag }) {
             className={!currentTag ? "active nav-item" : "nav-item"}
           >
             <a className="nav-link" onClick={(e) => onClick(e, "")} href="#">
-              All
+              Alle
             </a>
           </li>
           {tags.map((tag) => (
